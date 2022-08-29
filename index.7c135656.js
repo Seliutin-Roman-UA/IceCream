@@ -1,2 +1,2 @@
 !function(){var e={openModalBtn:document.querySelector("[products-overlay-open2]"),closeModalBtn:document.querySelector("[products-overlay-close2]"),modal:document.querySelector("[products-overlay2]")};function o(){e.modal.classList.toggle("products__overlay--hidden2")}e.openModalBtn.addEventListener("click",o),e.closeModalBtn.addEventListener("click",o)}();
-//# sourceMappingURL=index.f1cb0c09.js.map
+//# sourceMappingURL=index.7c135656.js.map
