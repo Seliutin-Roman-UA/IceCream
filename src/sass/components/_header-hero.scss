@@ -1,1171 +1,1079 @@
-
 .current {
-    color:$accent-color;
+  color: $accent-color;
 }
-
 
 .header {
-    background-color: $background-color;
-    padding: 12px 0 ;
+  background-color: $background-color;
+  padding: 12px 0;
 
-    &__inner {
-        display: flex;
-        justify-content: space-between;
-
-        
-    }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-
-
 @media screen and (max-width: $tablet) {
-    .header {
-     position:fixed;
-     width: 100%;
-     top: 0;
-     left:0;
-     z-index: 5;
-
-    }
- 
-}    
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+}
 
 @media screen and (min-width: $tablet) {
-    .header {
-        padding-top: 20px ;
+  .header {
+    padding-top: 20px;
 
-     &__inner {
-        align-items: center;
-        }
-     
+    &__inner {
+      align-items: center;
     }
+  }
 
-    .logo__ice-cream {
-        min-width: 19px;
-        min-height: 37px;  
-    }
+  .logo__ice-cream {
+    min-width: 19px;
+    min-height: 37px;
+  }
 }
 
 @media screen and (min-width: $desk) {
-    .header {
-     padding-top: 17px ;
-    }
+  .header {
+    padding-top: 17px;
+  }
 }
 // Лого
 
 .logo {
-    position: relative;
-    z-index:20;
+  position: relative;
+  z-index: 20;
 
-    &__text {
-        position: absolute;
-        top:63%;
-        left: 77%;
-        
-        font-family: 'Seymour One';
-        color: transparent;
-        font-size: 22px;
-        line-height: 1;
-        -webkit-text-stroke: 1px $accent-color;
-    }
+  &__text {
+    position: absolute;
+    top: 63%;
+    left: 77%;
 
+    font-family: 'Seymour One';
+    color: transparent;
+    font-size: 22px;
+    line-height: 1;
+    -webkit-text-stroke: 1px $accent-color;
+  }
 }
-
 
 // меню компьтер
 
 .menu {
-    display:none;
+  display: none;
 
-    & .menu__list {
-        display: flex;
-        gap: 27px;
-    }
+  & .menu__list {
+    display: flex;
+    gap: 27px;
+  }
 
-    & .menu__link {
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 1;
-    
-        color: #FCFCFC;
-    
-        &:hover,
-        &:focus {
-            cursor: pointer;
-            color:$accent-color;
-        }
+  & .menu__link {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+
+    color: #fcfcfc;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: $accent-color;
     }
+  }
 }
 
 @media screen and (min-width: $desk) {
-       .menu {
-           display:block;
-       }
+  .menu {
+    display: block;
+  }
 }
 
 // мобильное меню
 
 .menu__mobile {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%;
-    z-index: 19;
-    background-color: $background-color;
-    padding: 120px 0 0 0;
-    transition: transform 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 19;
+  background-color: $background-color;
+  padding: 120px 0 0 0;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+
+  transform: translate(150%);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  & .menu__mobil-link {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    color: $text-white;
+    transition: 250ms ease;
+    width: 100%;
+    display: block;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: $hover-color;
+    }
+
+    &:active {
+      color: $active-color;
+    }
+  }
+
+  &.is-open {
+    overflow: scroll;
+    transform: translateX(0);
+  }
+
+  & .menu__mobil-item {
+    padding: 15px 0;
     text-align: center;
-    
-    transform: translate(150%);
-    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-    & .menu__mobil-link {
-        
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 1;
-        color: $text-white; 
-        transition: 250ms ease;
-        width: 100%;
-        display: block;
-        
-        &:hover,
-        &:focus {
-            cursor: pointer;
-            color: $hover-color;
-        }
-
-        &:active {
-            color: $active-color;
-        }
-
-    }
-
-    &.is-open {
-        overflow: scroll;
-        transform: translateX(0);
-      }
-    
-
-    & .menu__mobil-item {
-        padding: 15px 0;
-        text-align: center;
-    }
-
-    & .current  {
-        color:$accent-color;
-    }
-
-
+  & .current {
+    color: $accent-color;
+  }
 }
 
 @media screen and (min-width: $desk) {
-    .menu-mobile {
-        display: none;
-    }
+  .menu-mobile {
+    display: none;
+  }
 }
-
 
 // конопка мобильного менюбъ (бургер)
 .menu__btn {
-    position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  z-index: 20;
+
+  &-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border: none;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    z-index: 20;
-    
+    justify-content: baseline;
+  }
 
-    &-list {
-        display: flex;
-        justify-content: baseline;
-    }
+  &.is-open .icon__cross {
+    display: block;
+  }
 
-    &.is-open .icon__cross{
-    
-        display: block;
-      }
+  &.is-open .icon__burger {
+    display: none;
+  }
 
-    &.is-open .icon__burger{
-        display: none;
-      }
+  &:hover .icon__burger,
+  &:focus .icon__burger {
+    fill: $accent-color;
+  }
 
-    &:hover .icon__burger,
-    &:focus .icon__burger{
-      fill: $accent-color;
-    }
-
-    &:hover.is-open .icon__cross,
-    &:focus.is-open .icon__cross{
+  &:hover.is-open .icon__cross,
+  &:focus.is-open .icon__cross {
     fill: $text-white;
   }
 }
 
 .icon__arrow:hover,
 .icon__arrow:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .menu__icon {
-    max-width: 20px;
-    max-height: 20px;
-    fill:  $text-white;
-    transition: 250ms ease;
+  max-width: 20px;
+  max-height: 20px;
+  fill: $text-white;
+  transition: 250ms ease;
 }
 
 .icon__cross {
-    display: none;
-    transition: 250ms ease; 
+  display: none;
+  transition: 250ms ease;
 }
 
-
 @media screen and (min-width: $tablet) {
-    .menu__btn {
-     margin-right: 31px;
-    }
+  .menu__btn {
+    margin-right: 31px;
+  }
 }
 
 @media screen and (min-width: $desk) {
-
-    .menu__btn {
-     display: none;
-    }
+  .menu__btn {
+    display: none;
+  }
 }
 
-// кнопка покупки 
+// кнопка покупки
 
 .menu__buy-btn {
-    position: relative;
-    display: none;
+  position: relative;
+  display: none;
 
-    padding: 12px 53px 12px 33px;
+  padding: 12px 53px 12px 33px;
 
-    width: 152px;
-    height: 42px;
+  width: 152px;
+  height: 42px;
 
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
 
-    color: $text-black;
-    border: none;
-    border-radius: 10px;
-    background-color: $accent-color;
+  color: $text-black;
+  border: none;
+  border-radius: 10px;
+  background-color: $accent-color;
+  transition: 250ms ease;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: $hover-color;
+  }
+
+  & .icon__cheveron-right {
+    position: absolute;
+    top: 12px;
+    right: 24px;
+
+    width: 18px;
+    height: 18px;
     transition: 250ms ease;
-
-    &:hover,
-    &:focus {
-     cursor: pointer;
-     background-color: $hover-color;
-     
-    }
-
-    & .icon__cheveron-right {
-        position: absolute;
-        top: 12px;
-        right: 24px;
-
-        width: 18px;
-        height: 18px;
-        transition: 250ms ease; 
-        
-        
-    }
+  }
 }
 
-@media screen and (min-width:$tablet) {
-
-    .plate .icon__cheveron-right {
+@media screen and (min-width: $tablet) {
+  .plate .icon__cheveron-right {
     top: 12px;
     right: 24px;
 
     width: 20px;
     height: 20px;
 
-    fill: #FFFFFF;
-    }
+    fill: #ffffff;
+  }
 }
 
-
-@media screen and (min-width:$tablet) {
-    .menu__buy-btn {
-        display: block;
-       }
+@media screen and (min-width: $tablet) {
+  .menu__buy-btn {
+    display: block;
+  }
 }
 
 .menu__buy-btn--mobile {
-    display: block;
-    margin: 0 auto;
-    margin-top: 30px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 // Модальное окно кнопки buy
 
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
 
-    opacity: 1;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 10;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
 }
 
 .backdrop {
-    &.is-hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 
-    &.is-hidden .modal {
-        transform: translate(-50%, -50%) scale(0.9);
-    }
+  &.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
 }
 
-
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 
-    width: 528px;
-    height: 581px;
- 
-    background: $text-white;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+  width: 528px;
+  height: 581px;
 
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: $text-white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 
-    
-}  
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 @media screen and (max-width: 768px) {
-    .modal {
-        width: 450px;
-        height: 609px; 
-    }
-      
+  .modal {
+    width: 450px;
+    height: 609px;
+  }
 }
 
 .btn__close {
-    
-    position: absolute;
-    top: 8px;
-    right: 8px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 
-    width:30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 
-    background-color: $text-white;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: 250ms ease;
-    
-    &:hover,
-    &:focus {
-        cursor: pointer;
-    }
+  background-color: $text-white;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 250ms ease;
 
-    &:hover .icon-cross,
-    &:focus .icon-cross {
-        cursor: pointer;
-        fill: $accent-color;
-        
-    }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  &:hover .icon-cross,
+  &:focus .icon-cross {
+    cursor: pointer;
+    fill: $accent-color;
+  }
 }
-
 
 // Hero
 
 .hero {
-    
-    background-color: $background-color;
-    padding-top: 167px;
-    position: relative;
-    
-    
-    
+  background-color: $background-color;
+  padding-top: 167px;
+  position: relative;
 
-    &__title {
-    
-        width: 247px;
-        margin-bottom: 32px;
-        font-family: 'Seymour One';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 26px;
-        line-height: 33px;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-    
-        color: #FFFFFF;
+  &__title {
+    width: 247px;
+    margin-bottom: 32px;
+    font-family: 'Seymour One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 33px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 
-    
-    }
+    color: #ffffff;
+  }
 
-    &__list {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: 130px;
-    }
-
+  &__list {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 130px;
+  }
 }
 
 .title_span {
-    font-size: 34px;
-}
-
-
-@media screen and (min-width:$tablet) {
-    .hero {
-        padding-bottom: 15px;
-        padding-top: 121px;
-
-        &__list {
-            margin-bottom: 30px;
-        }
-    }
-
-    .hero__title {
-        width: 180px;
-        font-size: 18px; 
-    }
-
-    .title_span {
-        font-size: 24px;
-    }
-}
-
-@media screen and (min-width:$desk) {
-    .hero__title {
-        width: 367px;
-        font-family: 'Seymour One';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 38px;
-        line-height: 1;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-
-        color: #FCFCFC;
-    }
-
-    .title_span {
-        font-size: 38px;
-    }
-
-    
-}
-
-
-
-.hero__inner {
-    display: flex;
-    justify-content: space-between;
-}
-
-.group__inner {
-    display: none;
-    margin-bottom: 20px;
-
-    & .num {
-    
-        text-align: end;
-    
-        font-weight: 900;
-        font-size: 28px;
-        line-height: 1;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-    
-        color: #000000;
-    
-        margin-bottom: 4px;
-    }
-    
-    & .word {
-        font-family: 'Montserrat';
-        text-align: end;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 8px;
-        line-height: 1;
-        color: #FFFFFF;
-    }
+  font-size: 34px;
 }
 
 @media screen and (min-width: $tablet) {
-    .group__inner {
-        display: block;
-    }  
+  .hero {
+    padding-bottom: 15px;
+    padding-top: 121px;
+
+    &__list {
+      margin-bottom: 30px;
+    }
+  }
+
+  .hero__title {
+    width: 180px;
+    font-size: 18px;
+  }
+
+  .title_span {
+    font-size: 24px;
+  }
 }
 
 @media screen and (min-width: $desk) {
-    .group__inner .num {
-        font-size: 46px;
-    }  
+  .hero__title {
+    width: 367px;
+    font-family: 'Seymour One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 
-    .group__inner .word {
-        font-size: 14px;  
-    }
+    color: #fcfcfc;
+  }
+
+  .title_span {
+    font-size: 38px;
+  }
 }
 
-.hero__link-prod{
-    @include flexCenter($flex: flex, $justify: center, $align: center);
-    width: 62px;
-    height: 24px;
-    margin-right:16px ;
+.hero__inner {
+  display: flex;
+  justify-content: space-between;
+}
 
+.group__inner {
+  display: none;
+  margin-bottom: 20px;
+
+  & .num {
+    text-align: end;
+
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    color: #000000;
+
+    margin-bottom: 4px;
+  }
+
+  & .word {
     font-family: 'Montserrat';
+    text-align: end;
     font-style: normal;
     font-weight: 400;
     font-size: 8px;
     line-height: 1;
-
-    color: #000000;
-    border: 2px solid $accent-color;
-    border-radius: 12px;
-
-    z-index: 1;
-
-    &:hover,
-    &:focus {
-        
-        cursor: pointer;
-        border: 2px solid $hover-color;
-    }
-
-    &:active {
-        border: 2px solid $active-color;  
-    }
-    
-}
-
-@media screen and (min-width:$desk) {
-     .hero__link-prod{
-        
-        width: 138px;
-        height: 44px;
-        font-size: 16px;
-
-    }
-}
-
-
-.hero__link-made {
-    
-    width: 78px;
-    height: 24px;
-
-    @include flexCenter($flex: flex, $justify: center, $align: center);
-
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 8px;
-    line-height: 1;
-    border: 2px solid transparent;
-
-    text-decoration-line: underline;
-    color:$accent-color;
-    z-index: 1;
-
-    &:hover,
-    &:focus {
-        cursor: pointer; 
-        color:$hover-color;
-    }
-
-    &:active {
-        color:$active-color;  
-    }
-}
-
-@media screen and (min-width:$desk) {
-    .hero__link-made{
-        
-        width: 145px;
-        height: 44px;
-        font-size: 16px;
-    }
-
-    
-}
-
-// Plate 
-
-.plate {
-    display: none;
-    
-    
-
-    &__img {
-        object-fit: cover;
-        width: 152px;
-        margin-right: 25px;
-        z-index: 2;
-    }
-
-    &__text {
-        
-        width: 151px;
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 140%;
-       
-        color: #FFFFFF;
-
-        margin-bottom: 13px;
-    }
-
-    & .line {
-        border: none; 
-        background-color: #FFFFFF; 
-        // color: #FFFFFF; 
-        
-        height: 2px;
-    }
+    color: #ffffff;
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .plate {
-        display: flex;
-        align-items: center;
-        z-index: 2;
-        margin-bottom: -52px;
-    }
-
-    .hero__wraper {
-        position: absolute;
-    }
+  .group__inner {
+    display: block;
+  }
 }
 
 @media screen and (min-width: $desk) {
+  .group__inner .num {
+    font-size: 46px;
+  }
 
-
-    .plate__img {
-        object-fit: contain;
-        width: 215px;
-        
-    }
-
-    .plate__text {
-        width: 200px;
-        font-size: 12px;
-        margin-bottom: 15px;
-    }
+  .group__inner .word {
+    font-size: 14px;
+  }
 }
-    
+
+.hero__link-prod {
+  @include flexCenter($flex: flex, $justify: center, $align: center);
+  width: 62px;
+  height: 24px;
+  margin-right: 16px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1;
+
+  color: #000000;
+  border: 2px solid $accent-color;
+  border-radius: 12px;
+
+  z-index: 1;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    border: 2px solid $hover-color;
+  }
+
+  &:active {
+    border: 2px solid $active-color;
+  }
+}
+
+@media screen and (min-width: $desk) {
+  .hero__link-prod {
+    width: 138px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+.hero__link-made {
+  width: 78px;
+  height: 24px;
+
+  @include flexCenter($flex: flex, $justify: center, $align: center);
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 1;
+  border: 2px solid transparent;
+
+  text-decoration-line: underline;
+  color: $accent-color;
+  z-index: 1;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: $hover-color;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+}
+
+@media screen and (min-width: $desk) {
+  .hero__link-made {
+    width: 145px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+// Plate
+
+.plate {
+  display: none;
+
+  &__img {
+    object-fit: cover;
+    width: 152px;
+    margin-right: 25px;
+    z-index: 2;
+  }
+
+  &__text {
+    width: 151px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+
+    color: #ffffff;
+
+    margin-bottom: 13px;
+  }
+
+  & .line {
+    border: none;
+    background-color: #ffffff;
+    // color: #FFFFFF;
+
+    height: 2px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .plate {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    margin-bottom: -52px;
+  }
+
+  .hero__wraper {
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: $desk) {
+  .plate__img {
+    object-fit: contain;
+    width: 215px;
+  }
+
+  .plate__text {
+    width: 200px;
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+}
+
 // Images
 
-
 .ice-cream {
-    position: absolute;
-    
-    top: 57%;
-    left: 50%;
-    transform: translate(-50%, 8px);
+  position: absolute;
 
-    object-fit: cover;
-    width: 210px;
-    overflow: hidden;
-    z-index: 1;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, 8px);
+
+  object-fit: cover;
+  width: 210px;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .ice-cream__tablet {
-    display: none;
+  display: none;
 }
 
 .ice-cream__desk {
-    display: none;
+  display: none;
 }
-
-
 
 @media screen and (min-width: $mobile) {
-    .ice-cream {
-        width: 240px;
-        position: absolute;
-        top: 51%;
-        left: 50%;
-        overflow: hidden;
-        transform: translate(-50%, 8px);
-    }
-
-    
+  .ice-cream {
+    width: 240px;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, 8px);
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .ice-cream {
-        display: none;
-    }
+  .ice-cream {
+    display: none;
+  }
 
-    .ice-cream__tablet {
-        display: block;
-        position: absolute;
-        top: 17%;
-        left: 43%;
-        transform: translate(0%, -4px);
-    }
-    
-    
+  .ice-cream__tablet {
+    display: block;
+    position: absolute;
+    top: 17%;
+    left: 43%;
+    transform: translate(0%, -4px);
+  }
 }
-
 
 @media screen and (min-width: $desk) {
-    .ice-cream__tablet {
-        display: none;
-    }
+  .ice-cream__tablet {
+    display: none;
+  }
 
-    .ice-cream__desk {
-        display: block;
-        position: absolute;
-        top: -2%;
-        left: 46%;
-        transform: translate(0%, 0px);
-        display: block;
-        z-index: 1;
-    }
-
+  .ice-cream__desk {
+    display: block;
+    position: absolute;
+    top: -2%;
+    left: 46%;
+    transform: translate(0%, 0px);
+    display: block;
+    z-index: 1;
+  }
 }
 
-
-
 .dots__wraper {
-    margin: 0 -20px;
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
+  margin: 0 -20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
 }
 
 @media screen and (min-width: $tablet) {
-    .dots__wraper {
-        margin: 0 -30px -15px -30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        z-index: 1;
-    }
-    
+  .dots__wraper {
+    margin: 0 -30px -15px -30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 1;
+  }
 }
 
 .dots-1 {
-    object-fit: cover;
-    width: 130px;
-    
+  object-fit: cover;
+  width: 130px;
 }
 
 .dots-2 {
-    // position: absolute;
-    bottom:31%;
-    left:0%; 
+  // position: absolute;
+  bottom: 31%;
+  left: 0%;
 }
 
 .dots-3 {
-    display: none;
+  display: none;
 }
 
 .dots-4 {
-    display: none;
+  display: none;
 }
 
 @media screen and (min-width: $mobile) {
+  .dots-1 {
+    object-fit: cover;
+    width: 130px;
+    z-index: 1;
+  }
 
-    .dots-1 {
-        object-fit: cover;
-        width: 130px;
-        z-index: 1;
-    }
-
-    .dots-2 {
-        object-fit: contain;
-        width: 130px;
-        z-index: 1;
-    }
-    
+  .dots-2 {
+    object-fit: contain;
+    width: 130px;
+    z-index: 1;
+  }
 }
 
 @media screen and (min-width: $tablet) {
-    .dots-1 {
-        
-        object-fit: cover;
-        width: 183px;
-        
-    }
-    
+  .dots-1 {
+    object-fit: cover;
+    width: 183px;
+  }
 }
-
 
 @media screen and (min-width: $tablet) {
-    .dots-2 {
-        display: none;
-    }
+  .dots-2 {
+    display: none;
+  }
 
-    .dots-3 {
-        display: block;
-        object-fit: contain;
-}
+  .dots-3 {
+    display: block;
+    object-fit: contain;
+  }
 }
 
 @media screen and (min-width: $desk) {
-    .dots-1 {
-        display: none;
-    }
+  .dots-1 {
+    display: none;
+  }
 
-    .dots-3 {
-        display: none;
-    }
+  .dots-3 {
+    display: none;
+  }
 
-    .dots-4 {
-        
-        display: block;
-        margin-top: -261px;
-    }
-    
-    
+  .dots-4 {
+    display: block;
+    margin-top: -261px;
+  }
 }
 
 .plate__img {
-    animation-name: spin;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
+  animation-name: spin;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
 
-
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 // BUY MENU
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 
-    border: none;
+  border: none;
 }
 
 td,
 th {
-    padding: 1px;
+  padding: 1px;
 }
 
 input {
-    padding: 0;
-    border: none;
-    background-color: #d9d9d9;
-    text-align: center;
-    border-radius: 6px;
+  padding: 0;
+  border: none;
+  background-color: #d9d9d9;
+  text-align: center;
+  border-radius: 6px;
 }
 
 .form-oder {
-    position: absolute;
-    min-height: 320px;
-    width: calc(100% * 0.8);
-    background-color: $accent-color;
-    width: 318px;
-    border-radius: 24px;
-    z-index: 100;
-    border: 2px solid $hover-color;
+  position: absolute;
+  min-height: 320px;
+  width: calc(100% * 0.8);
+  background-color: $accent-color;
+  width: 318px;
+  border-radius: 24px;
+  z-index: 100;
+  border: 2px solid $hover-color;
 
-    @media screen and (max-width: $tablet) {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        max-width: 380px;
-        transform: translate(-50%, -50%);
-    }
+  @media screen and (max-width: $tablet) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 380px;
+    transform: translate(-50%, -50%);
+  }
 
-    @media screen and (min-width: $tablet) {
-        top: 11vh;
-        left: 47vw;
-        width: 380px;
-        min-height: 350px;
-        padding: 15px;
-    }
+  @media screen and (min-width: $tablet) {
+    top: 11vh;
+    left: 47vw;
+    width: 380px;
+    min-height: 350px;
+    padding: 15px;
+  }
 
-    @media screen and (min-width: $desk) {
-        top: 11vh;
-        left: 46vw;
-        width: 640px;
-        min-height: 450px;
-        padding: 30px;
-    }
+  @media screen and (min-width: $desk) {
+    top: 11vh;
+    left: 46vw;
+    width: 640px;
+    min-height: 450px;
+    padding: 30px;
+  }
 }
 
 .form-header {
-    font-weight: 400;   
-    font-size: 28px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #ffffff;
-    padding-left: 24px;
-    margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-left: 24px;
+  margin-bottom: 20px;
 
-    @media screen and (min-width: $tablet) {
-        font-size: 34px;
-        margin-bottom: 20px;
-    }
+  @media screen and (min-width: $tablet) {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
 }
 
 .cell-logo {
-    position: relative;
-    width: 75px;
-    height: 75px;
+  position: relative;
+  width: 75px;
+  height: 75px;
 
-    & .logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+  & .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .cell-ice,
 .cell-coffee,
 .cell-milkshake {
-    position: relative;
-    border-radius: 50%;
-    box-shadow: 0px 8px 30px rgba(10, 136, 23, 0.25);
-    width: 75px;
-    height: 75px;
-    margin-bottom: 0px;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0px 8px 30px rgba(10, 136, 23, 0.25);
+  width: 75px;
+  height: 75px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cell-ice {
-    &::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        display: block;
-        width: 75px;
-        height: 75px;
-        background-image: url("../images/ice-cream-mob-tab.png");
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    display: block;
+    width: 75px;
+    height: 75px;
+    background-image: url('../images/ice-cream-mob-tab.png');
+    background-position: center;
+    background-size: cover;
+  }
 
-        background-position: center;
-        background-size: cover;
-    }
-
-    &::after {
-        content: "$4.99";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        display: block;
-        border-radius: 50%;
-        font-size: 15px;
-        transform: rotate(-15deg);
-        text-align: center;
-        line-height: 35px;
-        color: red;
-        background-color: #aec6a5;
-
-        display: block;
-        width: 35px;
-        height: 35px;
-    }
+  &::after {
+    content: '$4.99';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-radius: 50%;
+    font-size: 15px;
+    transform: rotate(-15deg);
+    text-align: center;
+    line-height: 35px;
+    color: red;
+    background-color: #aec6a5;
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .cell-coffee {
-    &::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        display: block;
-        width: 75px;
-        height: 75px;
-        background-image: url("../images/coffee-mob-tab.png");
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    display: block;
+    width: 75px;
+    height: 75px;
+    background-image: url('../images/coffee-mob-tab.png');
+    background-position: center;
+    background-size: cover;
+  }
 
-        background-position: center;
-        background-size: cover;
-    }
-
-    &::after {
-        content: "$7.99";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        display: block;
-        border-radius: 50%;
-        font-size: 15px;
-        transform: rotate(15deg);
-        text-align: center;
-        line-height: 35px;
-        color: red;
-        background-color: #efd478;
-
-        display: block;
-        width: 35px;
-        height: 35px;
-    }
+  &::after {
+    content: '$7.99';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-radius: 50%;
+    font-size: 15px;
+    transform: rotate(15deg);
+    text-align: center;
+    line-height: 35px;
+    color: red;
+    background-color: #efd478;
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .cell-milkshake {
-    &::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        display: block;
-        width: 75px;
-        height: 75px;
-        background-image: url("../images/milkshake-mob-tab.png");
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    display: block;
+    width: 75px;
+    height: 75px;
+    background-image: url('../images/milkshake-mob-tab.png');
+    background-position: center;
+    background-size: cover;
+  }
 
-        background-position: center;
-        background-size: cover;
-    }
-
-    &::after {
-        content: "$9.99";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        display: block;
-        border-radius: 50%;
-        font-size: 15px;
-        transform: rotate(-15deg);
-        text-align: center;
-        line-height: 35px;
-        color: red;
-        background-color: #d6936d;
-
-        display: block;
-        width: 35px;
-        height: 35px;
-    }
+  &::after {
+    content: '$9.99';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-radius: 50%;
+    font-size: 15px;
+    transform: rotate(-15deg);
+    text-align: center;
+    line-height: 35px;
+    color: red;
+    background-color: #d6936d;
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .row-amount input,
 .row-sum input,
 .row-total input {
-    width: 75px;
+  width: 75px;
 
-    @media screen and (min-width: $tablet) {
-        height: 25px;
-    }
+  @media screen and (min-width: $tablet) {
+    height: 25px;
+  }
 
-    @media screen and (min-width: $desk) {
-        width: 150px;
-        height: 30px;
-    }
+  @media screen and (min-width: $desk) {
+    width: 150px;
+    height: 30px;
+  }
 }
 
 .row-amount input {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .row-amount th,
 .row-sum th,
 .row-total th {
-    color: #ffffff;
-    text-align: right;
+  color: #ffffff;
+  text-align: right;
 }
 
 .oder_delivery {
-    display: block;
-    width: 280px;
-    height: 2.5em;
-    border-radius: 6px;
-    padding-right: 5px;
-    padding-left: 5px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 10px;
-    resize: none;
+  display: block;
+  width: 280px;
+  height: 2.5em;
+  border-radius: 6px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  resize: none;
 
-    @media screen and (min-width: $tablet) {
-        height: 65px;
-    }
+  @media screen and (min-width: $tablet) {
+    height: 65px;
+  }
 
-    @media screen and (min-width: $desk) {
-        width: 350px;
-        height: 120px;
-        margin-top: 30px;
-    }
+  @media screen and (min-width: $desk) {
+    width: 350px;
+    height: 120px;
+    margin-top: 30px;
+  }
 }
 
 .oder__button {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
 
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    border: none;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 11px rgba(10, 136, 23, 0.76);
+  }
 
-    &:hover {
-        cursor: pointer;
-        box-shadow: 0px 0px 10px 11px rgba(10, 136, 23, 0.76);
-    }
-
-    &:active img {
-        transform: scale(0.75);
-    }
+  &:active img {
+    transform: scale(0.75);
+  }
 }
 
 .is-hidden {
-    display: none;
+  display: none;
 }
 
 .oder-form__buton--close {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid $hover-color;
-    overflow: hidden;
-    // background-color: $background-color;
-    object-fit: cover;
-    position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid $hover-color;
+  overflow: hidden;
+  // background-color: $background-color;
+  object-fit: cover;
+  position: absolute;
+  top: -10px;
+  right: 0px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 6px 7px rgba(191, 9, 9, 0.76);
+  }
+
+  &:active img {
+    transform: scale(0.75);
+  }
+
+  @media screen and (min-width: $tablet) {
     top: -10px;
-    right: 0px;
-
-    &:hover {
-        cursor: pointer;
-        box-shadow: 0px 0px 6px 7px rgba(191, 9, 9, 0.76);
-    }
-
-    &:active img {
-        transform: scale(0.75);
-    }
-
-    @media screen and (min-width: $tablet) {
-        top: -10px;
-        right: -10px;
-    }
+    right: -10px;
+  }
 }
 
 .oder-form__buton--close img {
-    fill: $accent-color;
+  fill: $accent-color;
 }
-
-

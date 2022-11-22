@@ -8,7 +8,7 @@ const animation = [
 const delay = ['d0', 'd3000', 'd6000'];
 let count = 0;
 let button = document.querySelector('.click-me');
-console.log('button =', button);
+
 button.addEventListener('click', () => {
   const elements = document.querySelectorAll('.gallery__image');
 
