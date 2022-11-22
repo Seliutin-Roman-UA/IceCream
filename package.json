@@ -1,8 +1,8 @@
 {
-  "name": "parcel-project-template",
+  "name": "IceCream",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://Amfiteatr42.github.io/G5-IceCream",
+  "homepage": "https://seliutin-roman-ua.github.io/IceCream/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /G5-IceCream/"
